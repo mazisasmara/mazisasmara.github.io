@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portofolio Azis</title>
+        <style>
+            :root {
+                --bg: #c9c9ff;
+                --primary: #5a4fcf;
+                --text: #1f1f1f;
+                --card: #ffffff;
+            }
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    sans-serif;
+                background: var(--bg);
+                color: var(--text);
+                line-height: 1.6;
+            }
+
+            header {
+                text-align: center;
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            header img {
+                width: 160px;
+                height: 160px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 5px solid var(--primary);
+                background: #eee;
+            }
+
+            header h1 {
+                margin: 1rem 0 0.5rem;
+                font-size: 1.8rem;
+            }
+
+            nav {
+                margin-top: 1.2rem;
+                display: flex;
+                justify-content: center;
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: var(--primary);
+                font-weight: 600;
+            }
+
+            section {
+                max-width: 900px;
+                margin: 2.5rem auto;
+                padding: 0 1.2rem;
+            }
+
+            .card {
+                background: var(--card);
+                padding: 1.8rem;
+                border-radius: 14px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            ul {
+                padding-left: 1.2rem;
+            }
+
+            .media-list li {
+                margin-bottom: 0.4rem;
+            }
+
+            .media-list a {
+                color: var(--primary);
+                text-decoration: none;
+            }
+
+            .cert-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 1rem;
+            }
+
+            .cert {
+                background: #f4f4ff;
+                border-radius: 12px;
+                padding: 1rem;
+                text-align: center;
+                font-weight: 600;
+            }
+            
+            .Sertifikat {
+              width: 100%;
+              max-width: 100%;
+              height: 140px;          /* BATAS TINGGI */
+              object-fit: contain;   /* isi sertifikat tetap utuh */
+              border-radius: 8px;
+              background: #fff;
+              padding: 0.4rem;
+            }
+
+            footer {
+                text-align: center;
+                padding: 2rem 1rem;
+                font-size: 0.9rem;
+                opacity: 0.8;
+            }
+
+            @media (max-width: 480px) {
+                header h1 {
+                    font-size: 1.5rem;
+                }
+                header img {
+                    width: 130px;
+                    height: 130px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header id="beranda">
+            <img src="foto.webp" alt="Foto Profil" />
+            <h1>Hai, saya Azis! Selamat datang~</h1>
+            <nav>
+                <a href="#profil">Profil</a>
+                <a href="#media">Media Lain</a>
+                <a href="#sertifikat">Sertifikat</a>
+            </nav>
+        </header>
+        <section id="profil">
+            <div class="card">
+                <h2>Profil</h2>
+                <h3>Riwayat Pendidikan</h3>
+                <ul>
+                    <li>2024-2027: SMK Negeri 7 Makassar</li>
+                </ul>
+                <p>
+                    Riwayat sebelum SMA tidak ditunjukkan karena alasan pribadi.
+                </p>
+
+                <h3>Beberapa Riwayat Pengalaman</h3>
+                <p><strong>2025 : Freelance Website</strong></p>
+                <p>
+                    Saya membuka jasa pembuatan website sebagai beginner backend
+                    developer. Fokus utama saya berada pada pengembangan sisi
+                    backend menggunakan PHP, termasuk implementasi autentikasi
+                    dua faktor berbasis kode verifikasi melalui layanan email.
+                </p>
+                <p>
+                    Selain pengembangan web, saya juga berfokus pada pemrograman
+                    C++ untuk komunikasi dan pengendalian microcontroller
+                    sebagai bagian dari pengembangan sistem berbasis IoT.
+                </p>
+                <p>
+                    Saat ini saya juga tertarik untuk mempelajari bidang Machine
+                    Learning dan Natural Language Processing menggunakan Python
+                    sebagai pengembangan skill ke depannya.
+                </p>
+
+                <p>
+                    <strong>Teknologi utama:</strong> PHP, C++, MySQL, Arduino /
+                    Microcontroller
+                </p>
+            </div>
+        </section>
+        <section id="media">
+            <div class="card">
+                <h2>Media Lain</h2>
+                <ul class="media-list">
+                    <li>Geometry Dash: <a href="#">AbdiHaryadi</a></li>
+                    <li>GitHub: <a href="#">AbdiHaryadi</a></li>
+                    <li>Instagram: <a href="#">abdiharyadi</a></li>
+                    <li>itch.io: <a href="#">abdiharyadi</a></li>
+                    <li>LinkedIn: <a href="#">Abdi Haryadi</a></li>
+                    <li>YouTube: <a href="#">Abdi Haryadi</a></li>
+                </ul>
+            </div>
+        </section>
+        <section id="sertifikat">
+            <div class="card">
+                <h2>Sertifikat</h2>
+                <div class="cert-grid">
+                    <div class="cert">
+                      <p>Sertifikat Backend Development</p>
+                    </div>
+                    <div class="cert">
+                      <p>Sertifikat Lainnya</p>
+                      <img class="Sertifikat" src="sertifikat-KKRI.webp" alt="Sertifikat Backend Development">
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.8">
+                    Sertifikat akan terus diperbarui seiring perjalanan saya di
+                    dunia digital.
+                </p>
+            </div>
+        </section>
+        <footer>Abdi Haryadi © 2025</footer>
+    </body>
+</html>

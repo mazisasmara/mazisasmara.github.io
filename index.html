@@ -1,223 +1,295 @@
 <!doctype html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portofolio Azis</title>
-        <style>
-            :root {
-                --bg: #eef2ff;
-                --primary: #4f46e5;
-                --text: #1f1f1f;
-                --card: #ffffff;
-            }
-            * {
-                box-sizing: border-box;
-            }
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portofolio Azis</title>
 
-            body {
-                margin: 0;
-                font-family:
-                    system-ui,
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    "Segoe UI",
-                    sans-serif;
-                background: var(--bg);
-                color: var(--text);
-                line-height: 1.6;
-            }
+<style>
+:root{
+--bg:#eef2ff;
+--primary:#4f46e5;
+--text:#1f1f1f;
+--card:#ffffff;
+}
 
-            header {
-                text-align: center;
-                padding: 3rem 1.5rem 2rem;
-            }
+body.dark{
+--bg:#0f172a;
+--text:#e2e8f0;
+--card:#1e293b;
+--primary:#818cf8;
+}
 
-            header img {
-                width: 160px;
-                height: 160px;
-                object-fit: cover;
-                border-radius: 50%;
-                border: 5px solid var(--primary);
-                background: #eee;
-            }
+*{box-sizing:border-box}
 
-            header h1 {
-                margin: 1rem 0 0.5rem;
-                font-size: 1.8rem;
-            }
+html{scroll-behavior:smooth}
 
-            nav {
-                margin-top: 1.2rem;
-                display: flex;
-                justify-content: center;
-                gap: 1.2rem;
-                flex-wrap: wrap;
-            }
+body{
+margin:0;
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:linear-gradient(-45deg,#eef2ff,#e0e7ff,#c7d2fe);
+background-size:400% 400%;
+animation:gradientMove 15s ease infinite;
+color:var(--text);
+line-height:1.6;
+transition:0.3s;
+}
 
-            nav a {
-                text-decoration: none;
-                color: var(--primary);
-                font-weight: 600;
-            }
+body.dark{
+background:#0f172a;
+animation:none;
+}
 
-            section {
-                max-width: 900px;
-                margin: 2.5rem auto;
-                padding: 0 1.2rem;
-            }
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
 
-            .card {
-                background: var(--card);
-                padding: 1.8rem;
-                border-radius: 14px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            }
+header{text-align:center;padding:3rem 1.5rem 2rem}
 
-            h2 {
-                margin-top: 0;
-            }
+header img{
+width:160px;height:160px;
+object-fit:cover;border-radius:50%;
+border:5px solid var(--primary);
+}
 
-            ul {
-                padding-left: 1.2rem;
-            }
+h1{margin:1rem 0 0.5rem}
 
-            .media-list li {
-                margin-bottom: 0.4rem;
-            }
+nav{
+margin-top:1.2rem;
+display:flex;justify-content:center;
+gap:1.2rem;flex-wrap:wrap;
+}
 
-            .media-list a {
-                color: var(--primary);
-                text-decoration: none;
-            }
+nav a{
+text-decoration:none;
+color:var(--primary);
+font-weight:600;
+position:relative;
+}
 
-            .cert-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                gap: 1rem;
-            }
+nav a::after{
+content:"";
+position:absolute;
+left:0;bottom:-4px;
+width:0;height:2px;
+background:var(--primary);
+transition:0.3s;
+}
+nav a:hover::after{width:100%}
 
-            .cert {
-                background: #f4f4ff;
-                border-radius: 12px;
-                padding: 1rem;
-                text-align: center;
-                font-weight: 600;
-            }
-            
-            .Sertifikat {
-              width: 100%;
-              max-width: 100%;
-              height: 140px;          /* BATAS TINGGI */
-              object-fit: contain;   /* isi sertifikat tetap utuh */
-              border-radius: 8px;
-              background: #fff;
-              padding: 0.4rem;
-            }
+.toggle-btn{
+margin-top:1rem;
+cursor:pointer;
+padding:0.4rem 0.8rem;
+border-radius:20px;
+border:none;
+background:var(--primary);
+color:white;
+font-weight:600;
+}
 
-            footer {
-                text-align: center;
-                padding: 2rem 1rem;
-                font-size: 0.9rem;
-                opacity: 0.8;
-            }
+section{
+max-width:1000px;
+margin:2.5rem auto;
+padding:0 1.2rem;
+}
 
-            @media (max-width: 480px) {
-                header h1 {
-                    font-size: 1.5rem;
-                }
-                header img {
-                    width: 130px;
-                    height: 130px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header id="beranda">
-            <img src="foto.webp" alt="Foto Profil" />
-            <h1>Hai, saya Azis!</h1>
-            <nav>
-                <a href="#profil">Profil</a>
-                <a href="#media">Media Lain</a>
-                <a href="#sertifikat">Sertifikat</a>
-            </nav>
-        </header>
-        <section id="profil">
-            <div class="card">
-                <h2>Profil</h2>
-                <h3>Riwayat Pendidikan</h3>
-                <ul>
-                    <li>2024-2027: SMK Negeri 7 Makassar</li>
-                </ul>
-                <p>
-                    Riwayat sebelum SMA tidak ditunjukkan karena alasan pribadi.
-                </p>
+.card{
+background:var(--card);
+padding:1.8rem;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.4s;
+}
 
-                <h3>Beberapa Riwayat Pengalaman</h3>
-                <p><strong>2025-2026 : Freelance Website</strong></p>
-                <p>
-                    Saya membuka jasa pembuatan website sebagai beginner backend
-                    developer. Fokus utama saya berada pada pengembangan sisi
-                    backend menggunakan PHP, termasuk implementasi autentikasi
-                    dua faktor berbasis kode verifikasi melalui layanan email.
-                </p>
-                <p>
-                    Selain pengembangan web, saya juga berfokus pada pemrograman
-                    C++ untuk komunikasi dan pengendalian microcontroller
-                    sebagai bagian dari pengembangan sistem berbasis IoT.
-                </p>
-                <p>
-                    Saat ini saya juga tertarik untuk mempelajari bidang Machine
-                    Learning dan Natural Language Processing menggunakan Python
-                    sebagai pengembangan skill ke depannya.
-                </p>
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
 
-                <p>
-                    <strong>Teknologi utama:</strong> PHP, C++, MySQL, Arduino /
-                    Microcontroller
-                </p>
-            </div>
-        </section>
-        <section id="media">
-            <div class="card">
-                <h2>Media Lain</h2>
-                <ul class="media-list">
-                    <li>GitHub: <a href="https://github.com/mazisasmara">mazisasmara</a></li>
-                    <li>Instagram: <a href="https://www.instagram.com/mhmmdazssss?igsh=MWd4bXVmMzlzcDhpNQ==">mhmmdazssss</a></li>
-                    <li>LinkedIn: <a href="#" onclick="alert('Proses ;)')" >M. Azis asmara</a></li>
-                    <li>YouTube: <a href="#" onclick="alert('Proses ;)')" >M. Azis asmara</a></li>
-                </ul>
-            </div>
-        </section>
-        <section id="sertifikat">
-            <div class="card">
-                <h2>Sertifikat</h2>
-                <div class="cert-grid">
-                    <div class="cert">
-                      <p>Sertifikat Dasar AI</p>
-                     <img class="Sertifikat"
-                     src="sertifikat_course_653_4977572_090226173605.pdf_20260226_005756465_7441652983621127721.png"
-                     alt="Sertifikat Dasar AI">
-                    </div>
-                    <div class="cert">
-                      <p>Sertifikat Financial Literacy</p>
-                     <img class="Sertifikat"
-                     src="sertifikat_course_905_4977572_310126203624%20(2).pdf_20260226_005738924_8474969003688534611.png"
-                     alt="Sertifikat Financial Literacy">
-                    </div>
-                    <div class="cert">
-                      <p>Sertifikat Lainnya</p>
-                      <img class="Sertifikat" src="sertifikat-KKRI.webp"
-                      alt="Sertifikat KKRI 2025">
-                    </div>
-                </div>
-                <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.8">
-                    Sertifikat akan terus diperbarui seiring perjalanan saya di
-                    dunia digital.
-                </p>
-            </div>
-        </section>
-        <footer>M. Azis asmara © 2026</footer>
-    </body>
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.cert-grid,.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:1rem;
+}
+
+.cert,.project{
+background:#f4f4ff;
+border-radius:12px;
+padding:1rem;
+text-align:center;
+font-weight:600;
+transform-style:preserve-3d;
+transition:transform 0.2s ease;
+cursor:pointer;
+}
+
+.Sertifikat{
+width:100%;
+height:140px;
+object-fit:contain;
+border-radius:8px;
+background:#fff;
+padding:0.4rem;
+}
+
+.modal{
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+pointer-events:none;
+transition:0.3s;
+}
+
+.modal.active{
+opacity:1;
+pointer-events:auto;
+}
+
+.modal-content{
+background:white;
+padding:2rem;
+border-radius:10px;
+max-width:400px;
+text-align:center;
+}
+
+footer{text-align:center;padding:2rem 1rem;opacity:0.8}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="foto.webp" alt="Foto Profil"/>
+<h1>Hai, saya Azis!</h1>
+<h3><span id="typing"></span></h3>
+<button class="toggle-btn" onclick="toggleDark()">Toggle Dark Mode</button>
+
+<nav>
+<a href="#profil">Profil</a>
+<a href="#projects">Project</a>
+<a href="#sertifikat">Sertifikat</a>
+</nav>
+</header>
+
+<section id="profil" class="hidden">
+<div class="card">
+<h2>Profil</h2>
+<p>Saya adalah backend developer yang fokus pada PHP, IoT, dan pengembangan sistem berbasis microcontroller.</p>
+</div>
+</section>
+
+<section id="projects" class="hidden">
+<div class="card">
+<h2>Project Showcase</h2>
+<div class="project-grid">
+<div class="project" onclick="openModal('Website Freelance Project dengan sistem autentikasi 2FA.')">
+Website Freelance
+</div>
+<div class="project" onclick="openModal('Sistem IoT Monitoring berbasis Arduino dan C++.')">
+IoT Monitoring
+</div>
+</div>
+</div>
+</section>
+
+<section id="sertifikat" class="hidden">
+<div class="card">
+<h2>Sertifikat</h2>
+<div class="cert-grid">
+<div class="cert">
+<p>Sertifikat Dasar AI</p>
+<img class="Sertifikat" src="sertifikat-KKRI.webp"/>
+</div>
+<div class="cert">
+<p>Sertifikat Financial Literacy</p>
+<img class="Sertifikat" src="sertifikat-KKRI.webp"/>
+</div>
+</div>
+</div>
+</section>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<p id="modal-text"></p>
+<button onclick="closeModal()">Tutup</button>
+</div>
+</div>
+
+<footer>M. Azis Asmara © 2026</footer>
+
+<script>
+// typing effect
+const words=["Backend Developer","IoT Enthusiast","Future ML Engineer"];
+let i=0,j=0,current="",isDeleting=false;
+function type(){
+current=words[i];
+document.getElementById("typing").textContent=current.substring(0,j);
+if(!isDeleting && j<current.length){j++}
+else if(isDeleting && j>0){j--}
+else if(!isDeleting && j===current.length){isDeleting=true;setTimeout(type,1000);return;}
+else{isDeleting=false;i=(i+1)%words.length;}
+setTimeout(type,isDeleting?50:100);
+}
+type();
+
+// dark mode
+function toggleDark(){
+document.body.classList.toggle("dark");
+}
+
+// reveal animation
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add("show")}
+});
+});
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+
+// modal
+function openModal(text){
+document.getElementById("modal-text").innerText=text;
+document.getElementById("modal").classList.add("active");
+}
+function closeModal(){
+document.getElementById("modal").classList.remove("active");
+}
+
+// 3D tilt
+document.querySelectorAll(".cert").forEach(card=>{
+card.addEventListener("mousemove",e=>{
+const rect=card.getBoundingClientRect();
+const x=e.clientX-rect.left;
+const y=e.clientY-rect.top;
+const centerX=rect.width/2;
+const centerY=rect.height/2;
+const rotateX=((y-centerY)/centerY)*10;
+const rotateY=((x-centerX)/centerX)*10;
+card.style.transform=`rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+});
+card.addEventListener("mouseleave",()=>{
+card.style.transform="rotateX(0) rotateY(0)";
+});
+});
+</script>
+
+</body>
 </html>

@@ -137,6 +137,21 @@
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             }
 
+            .school-detail {
+                max-height: 0;
+                overflow: hidden;
+                transition: 0.4s;
+                background: #f4f4ff;
+                border-radius: 10px;
+                padding: 0 1rem;
+            }
+
+            .school-detail.active {
+                max-height: 200px;
+                padding: 1rem;
+                margin-top: 10px;
+            }
+
             .hidden {
                 opacity: 0;
                 transform: translateY(40px);
@@ -229,11 +244,28 @@
 
         <section id="profil" class="hidden">
             <div class="card">
-                <h2>Profil</h2>
+                <h2>Profil Singkat</h2>
                 <p>
-                    Saya adalah backend developer yang fokus pada PHP, IoT, dan
-                    pengembangan sistem berbasis microcontroller.
+                    <b>Nama:</b> Muhammad Azis Asmara <br /><b>Panggilan:</b>
+                    Aiz <br /><b>Lahir: </b>Makassar, 7 April 2009 <br /><b
+                        >Domisili</b
+                    >
+                    Makassar
                 </p>
+                <h2>Riwayat Pendidikan</h2>
+
+                <div class="project" onclick="toggleSchool()">
+                    SMKN 7 Makassar (2024–2027)
+                </div>
+
+                <div id="school-detail" class="school-detail">
+                    <p>
+                        <b>Jurusan:</b> RPL (Rekayasa Perangkat Lunak)
+                        <br />
+                        <b>Fokus belajar:</b> Web Development, Basis Data,
+                        Pengembangan Gim, dan IoT.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -245,7 +277,9 @@
                         class="project"
                         onclick="
                             openModal(
-                                'Website Freelance Project dengan sistem autentikasi 2FA.'
+                                `Website Freelance dengan bahasa pemrograman
+                                PHP, yang di kombinasikan dengan teknologi HTML,
+                                CSS, dan Javascript.`
                             )
                         "
                     >
@@ -271,14 +305,17 @@
                 <div class="cert-grid">
                     <div class="cert">
                         <p>Sertifikat Dasar AI</p>
-                        <img class="Sertifikat"
-                        src="sertifikat_course_653_4977572_090226173605.pdf_20260226_005756465_7441652983621127721.png"
+                        <img
+                            class="Sertifikat"
+                            src="sertifikat_course_653_4977572_090226173605.pdf_20260226_005756465_7441652983621127721.png"
                         />
                     </div>
                     <div class="cert">
                         <p>Sertifikat Financial Literacy</p>
-                        <img class="Sertifikat"
-                        src="sertifikat_course_905_4977572_310126203624%20(2).pdf_20260226_005738924_8474969003688534611.png" />
+                        <img
+                            class="Sertifikat"
+                            src="sertifikat_course_905_4977572_310126203624%20(2).pdf_20260226_005738924_8474969003688534611.png"
+                        />
                     </div>
                     <div class="cert">
                         <p>Sertifikat KKRI 2025</p>
@@ -291,7 +328,7 @@
         <div class="modal" id="modal">
             <div class="modal-content">
                 <p id="modal-text"></p>
-                <button onclick="closeModal()">Tutup</button>
+                <button onclick="closeModal()" class="toggle-btn">Tutup</button>
             </div>
         </div>
 
@@ -301,8 +338,8 @@
             // typing effect
             const words = [
                 "Backend Developer",
-                "IoT Enthusiast",
-                "Future ML Engineer"
+                "IoT & Robotics Enthusiast",
+                "Aspiring ML Engineer"
             ];
             let i = 0,
                 j = 0,
@@ -344,6 +381,12 @@
             document
                 .querySelectorAll(".hidden")
                 .forEach(el => observer.observe(el));
+
+            // Toggle school
+            function toggleSchool() {
+                const el = document.getElementById("school-detail");
+                el.classList.toggle("active");
+            }
 
             // modal
             function openModal(text) {

@@ -1,295 +1,376 @@
 <!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Portofolio Azis</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portofolio Azis</title>
 
-<style>
-:root{
---bg:#eef2ff;
---primary:#4f46e5;
---text:#1f1f1f;
---card:#ffffff;
-}
+        <style>
+            :root {
+                --bg: #eef2ff;
+                --primary: #4f46e5;
+                --text: #1f1f1f;
+                --card: #ffffff;
+            }
 
-body.dark{
---bg:#0f172a;
---text:#e2e8f0;
---card:#1e293b;
---primary:#818cf8;
-}
+            body.dark {
+                --bg: #0f172a;
+                --text: #e2e8f0;
+                --card: #1e293b;
+                --primary: #818cf8;
+            }
 
-*{box-sizing:border-box}
+            * {
+                box-sizing: border-box;
+            }
 
-html{scroll-behavior:smooth}
+            html {
+                scroll-behavior: smooth;
+            }
 
-body{
-margin:0;
-font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:linear-gradient(-45deg,#eef2ff,#e0e7ff,#c7d2fe);
-background-size:400% 400%;
-animation:gradientMove 15s ease infinite;
-color:var(--text);
-line-height:1.6;
-transition:0.3s;
-}
+            body {
+                margin: 0;
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    sans-serif;
+                background: linear-gradient(-45deg, #eef2ff, #e0e7ff, #c7d2fe);
+                background-size: 400% 400%;
+                animation: gradientMove 15s ease infinite;
+                color: var(--text);
+                line-height: 1.6;
+                transition: 0.3s;
+            }
 
-body.dark{
-background:#0f172a;
-animation:none;
-}
+            body.dark {
+                background: #0f172a;
+                animation: none;
+            }
 
-@keyframes gradientMove{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
-}
+            @keyframes gradientMove {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
 
-header{text-align:center;padding:3rem 1.5rem 2rem}
+            header {
+                text-align: center;
+                padding: 3rem 1.5rem 2rem;
+            }
 
-header img{
-width:160px;height:160px;
-object-fit:cover;border-radius:50%;
-border:5px solid var(--primary);
-}
+            header img {
+                width: 160px;
+                height: 160px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 5px solid var(--primary);
+            }
 
-h1{margin:1rem 0 0.5rem}
+            h1 {
+                margin: 1rem 0 0.5rem;
+            }
 
-nav{
-margin-top:1.2rem;
-display:flex;justify-content:center;
-gap:1.2rem;flex-wrap:wrap;
-}
+            nav {
+                margin-top: 1.2rem;
+                display: flex;
+                justify-content: center;
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
 
-nav a{
-text-decoration:none;
-color:var(--primary);
-font-weight:600;
-position:relative;
-}
+            nav a {
+                text-decoration: none;
+                color: var(--primary);
+                font-weight: 600;
+                position: relative;
+            }
 
-nav a::after{
-content:"";
-position:absolute;
-left:0;bottom:-4px;
-width:0;height:2px;
-background:var(--primary);
-transition:0.3s;
-}
-nav a:hover::after{width:100%}
+            nav a::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -4px;
+                width: 0;
+                height: 2px;
+                background: var(--primary);
+                transition: 0.3s;
+            }
+            nav a:hover::after {
+                width: 100%;
+            }
 
-.toggle-btn{
-margin-top:1rem;
-cursor:pointer;
-padding:0.4rem 0.8rem;
-border-radius:20px;
-border:none;
-background:var(--primary);
-color:white;
-font-weight:600;
-}
+            .toggle-btn {
+                margin-top: 1rem;
+                cursor: pointer;
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                border: none;
+                background: var(--primary);
+                color: white;
+                font-weight: 600;
+            }
 
-section{
-max-width:1000px;
-margin:2.5rem auto;
-padding:0 1.2rem;
-}
+            section {
+                max-width: 1000px;
+                margin: 2.5rem auto;
+                padding: 0 1.2rem;
+            }
 
-.card{
-background:var(--card);
-padding:1.8rem;
-border-radius:14px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transition:0.4s;
-}
+            .card {
+                background: var(--card);
+                padding: 1.8rem;
+                border-radius: 14px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                transition: 0.4s;
+            }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
-}
+            .card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
 
-.hidden{
-opacity:0;
-transform:translateY(40px);
-transition:all 0.8s ease;
-}
-.show{
-opacity:1;
-transform:translateY(0);
-}
+            .hidden {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: all 0.8s ease;
+            }
+            .show {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-.cert-grid,.project-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:1rem;
-}
+            .cert-grid,
+            .project-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 1rem;
+            }
 
-.cert,.project{
-background:#f4f4ff;
-border-radius:12px;
-padding:1rem;
-text-align:center;
-font-weight:600;
-transform-style:preserve-3d;
-transition:transform 0.2s ease;
-cursor:pointer;
-}
+            .cert,
+            .project {
+                background: #f4f4ff;
+                border-radius: 12px;
+                padding: 1rem;
+                text-align: center;
+                font-weight: 600;
+                transform-style: preserve-3d;
+                transition: transform 0.2s ease;
+                cursor: pointer;
+            }
 
-.Sertifikat{
-width:100%;
-height:140px;
-object-fit:contain;
-border-radius:8px;
-background:#fff;
-padding:0.4rem;
-}
+            .Sertifikat {
+                width: 100%;
+                height: 140px;
+                object-fit: contain;
+                border-radius: 8px;
+                background: #fff;
+                padding: 0.4rem;
+            }
 
-.modal{
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,0.6);
-display:flex;
-align-items:center;
-justify-content:center;
-opacity:0;
-pointer-events:none;
-transition:0.3s;
-}
+            .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                pointer-events: none;
+                transition: 0.3s;
+            }
 
-.modal.active{
-opacity:1;
-pointer-events:auto;
-}
+            .modal.active {
+                opacity: 1;
+                pointer-events: auto;
+            }
 
-.modal-content{
-background:white;
-padding:2rem;
-border-radius:10px;
-max-width:400px;
-text-align:center;
-}
+            .modal-content {
+                background: white;
+                padding: 2rem;
+                border-radius: 10px;
+                max-width: 400px;
+                text-align: center;
+            }
 
-footer{text-align:center;padding:2rem 1rem;opacity:0.8}
-</style>
-</head>
+            footer {
+                text-align: center;
+                padding: 2rem 1rem;
+                opacity: 0.8;
+            }
+        </style>
+    </head>
 
-<body>
+    <body>
+        <header>
+            <img src="foto.webp" alt="Foto Profil" />
+            <h1>Hai, saya Azis!</h1>
+            <h3><span id="typing"></span></h3>
+            <button class="toggle-btn" onclick="toggleDark()">
+                Toggle Dark Mode
+            </button>
 
-<header>
-<img src="foto.webp" alt="Foto Profil"/>
-<h1>Hai, saya Azis!</h1>
-<h3><span id="typing"></span></h3>
-<button class="toggle-btn" onclick="toggleDark()">Toggle Dark Mode</button>
+            <nav>
+                <a href="#profil">Profil</a>
+                <a href="#projects">Project</a>
+                <a href="#sertifikat">Sertifikat</a>
+            </nav>
+        </header>
 
-<nav>
-<a href="#profil">Profil</a>
-<a href="#projects">Project</a>
-<a href="#sertifikat">Sertifikat</a>
-</nav>
-</header>
+        <section id="profil" class="hidden">
+            <div class="card">
+                <h2>Profil</h2>
+                <p>
+                    Saya adalah backend developer yang fokus pada PHP, IoT, dan
+                    pengembangan sistem berbasis microcontroller.
+                </p>
+            </div>
+        </section>
 
-<section id="profil" class="hidden">
-<div class="card">
-<h2>Profil</h2>
-<p>Saya adalah backend developer yang fokus pada PHP, IoT, dan pengembangan sistem berbasis microcontroller.</p>
-</div>
-</section>
+        <section id="projects" class="hidden">
+            <div class="card">
+                <h2>Project Showcase</h2>
+                <div class="project-grid">
+                    <div
+                        class="project"
+                        onclick="
+                            openModal(
+                                'Website Freelance Project dengan sistem autentikasi 2FA.'
+                            )
+                        "
+                    >
+                        Website Freelance
+                    </div>
+                    <div
+                        class="project"
+                        onclick="
+                            openModal(
+                                'Sistem IoT Monitoring berbasis Arduino dan C++.'
+                            )
+                        "
+                    >
+                        IoT Monitoring
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="projects" class="hidden">
-<div class="card">
-<h2>Project Showcase</h2>
-<div class="project-grid">
-<div class="project" onclick="openModal('Website Freelance Project dengan sistem autentikasi 2FA.')">
-Website Freelance
-</div>
-<div class="project" onclick="openModal('Sistem IoT Monitoring berbasis Arduino dan C++.')">
-IoT Monitoring
-</div>
-</div>
-</div>
-</section>
+        <section id="sertifikat" class="hidden">
+            <div class="card">
+                <h2>Sertifikat</h2>
+                <div class="cert-grid">
+                    <div class="cert">
+                        <p>Sertifikat Dasar AI</p>
+                        <img class="Sertifikat"
+                        src="sertifikat_course_653_4977572_090226173605.pdf_20260226_005756465_7441652983621127721.png"
+                        />
+                    </div>
+                    <div class="cert">
+                        <p>Sertifikat Financial Literacy</p>
+                        <img class="Sertifikat"
+                        src="sertifikat_course_905_4977572_310126203624
+                        (2).pdf_20260226_005738924_8474969003688534611.png" />
+                    </div>
+                    <div class="cert">
+                        <p>Sertifikat KKRI 2025</p>
+                        <img class="Sertifikat" src="sertifikat-KKRI.webp" />
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="sertifikat" class="hidden">
-<div class="card">
-<h2>Sertifikat</h2>
-<div class="cert-grid">
-<div class="cert">
-<p>Sertifikat Dasar AI</p>
-<img class="Sertifikat" src="sertifikat-KKRI.webp"/>
-</div>
-<div class="cert">
-<p>Sertifikat Financial Literacy</p>
-<img class="Sertifikat" src="sertifikat-KKRI.webp"/>
-</div>
-</div>
-</div>
-</section>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <p id="modal-text"></p>
+                <button onclick="closeModal()">Tutup</button>
+            </div>
+        </div>
 
-<div class="modal" id="modal">
-<div class="modal-content">
-<p id="modal-text"></p>
-<button onclick="closeModal()">Tutup</button>
-</div>
-</div>
+        <footer>M. Azis Asmara © 2026</footer>
 
-<footer>M. Azis Asmara © 2026</footer>
+        <script>
+            // typing effect
+            const words = [
+                "Backend Developer",
+                "IoT Enthusiast",
+                "Future ML Engineer"
+            ];
+            let i = 0,
+                j = 0,
+                current = "",
+                isDeleting = false;
+            function type() {
+                current = words[i];
+                document.getElementById("typing").textContent =
+                    current.substring(0, j);
+                if (!isDeleting && j < current.length) {
+                    j++;
+                } else if (isDeleting && j > 0) {
+                    j--;
+                } else if (!isDeleting && j === current.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1000);
+                    return;
+                } else {
+                    isDeleting = false;
+                    i = (i + 1) % words.length;
+                }
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+            type();
 
-<script>
-// typing effect
-const words=["Backend Developer","IoT Enthusiast","Future ML Engineer"];
-let i=0,j=0,current="",isDeleting=false;
-function type(){
-current=words[i];
-document.getElementById("typing").textContent=current.substring(0,j);
-if(!isDeleting && j<current.length){j++}
-else if(isDeleting && j>0){j--}
-else if(!isDeleting && j===current.length){isDeleting=true;setTimeout(type,1000);return;}
-else{isDeleting=false;i=(i+1)%words.length;}
-setTimeout(type,isDeleting?50:100);
-}
-type();
+            // dark mode
+            function toggleDark() {
+                document.body.classList.toggle("dark");
+            }
 
-// dark mode
-function toggleDark(){
-document.body.classList.toggle("dark");
-}
+            // reveal animation
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            });
+            document
+                .querySelectorAll(".hidden")
+                .forEach(el => observer.observe(el));
 
-// reveal animation
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add("show")}
-});
-});
-document.querySelectorAll(".hidden").forEach(el=>observer.observe(el));
+            // modal
+            function openModal(text) {
+                document.getElementById("modal-text").innerText = text;
+                document.getElementById("modal").classList.add("active");
+            }
+            function closeModal() {
+                document.getElementById("modal").classList.remove("active");
+            }
 
-// modal
-function openModal(text){
-document.getElementById("modal-text").innerText=text;
-document.getElementById("modal").classList.add("active");
-}
-function closeModal(){
-document.getElementById("modal").classList.remove("active");
-}
-
-// 3D tilt
-document.querySelectorAll(".cert").forEach(card=>{
-card.addEventListener("mousemove",e=>{
-const rect=card.getBoundingClientRect();
-const x=e.clientX-rect.left;
-const y=e.clientY-rect.top;
-const centerX=rect.width/2;
-const centerY=rect.height/2;
-const rotateX=((y-centerY)/centerY)*10;
-const rotateY=((x-centerX)/centerX)*10;
-card.style.transform=`rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
-});
-card.addEventListener("mouseleave",()=>{
-card.style.transform="rotateX(0) rotateY(0)";
-});
-});
-</script>
-
-</body>
+            // 3D tilt
+            document.querySelectorAll(".cert").forEach(card => {
+                card.addEventListener("mousemove", e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * 10;
+                    const rotateY = ((x - centerX) / centerX) * 10;
+                    card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+                card.addEventListener("mouseleave", () => {
+                    card.style.transform = "rotateX(0) rotateY(0)";
+                });
+            });
+        </script>
+    </body>
 </html>

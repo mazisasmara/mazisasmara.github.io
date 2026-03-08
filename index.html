@@ -716,7 +716,7 @@
                 const isActive = detail.classList.contains("active");
 
                 // Tutup semua dropdown lain jika ingin (opsional)
-                // document.querySelectorAll('.school-detail').forEach(d => d.classList.remove('active'));
+                document.querySelectorAll('.school-detail').forEach(d => d.classList.remove('active'));
 
                 if (isActive) {
                     detail.classList.remove("active");

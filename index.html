@@ -455,6 +455,37 @@
                     <div class="school-wrapper">
                         <div
                             class="school-item"
+                            onclick="toggleDropdown('smp-detail', this)"
+                        >
+                            <span>SMP Negeri 2 Makassar (2021–2024)</span>
+                            <svg
+                                class="chevron"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                style="transition: 0.3s"
+                            >
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <div id="smp-detail" class="school-detail">
+                            <p>
+                                <strong>Fokus:</strong>Informatika, PPKN, dan
+                                Sejarah.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item Sekolah 2: Kuliah (Hasil Duplikat) -->
+                    <div class="school-wrapper">
+                        <div
+                            class="school-item"
                             onclick="toggleDropdown('smk-detail', this)"
                         >
                             <span>SMKN 7 Makassar (2024–2027)</span>
@@ -480,44 +511,9 @@
                                 Perangkat Lunak)
                             </p>
                             <p>
-                                <strong>Fokus:</strong>Web Development
+                                <strong>Fokus:</strong> Web Development
                                 (Fullstack), Basis Data, IoT System, dan
                                 Robotics.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Item Sekolah 2: Kuliah (Hasil Duplikat) -->
-                    <div class="school-wrapper">
-                        <div
-                            class="school-item"
-                            onclick="toggleDropdown('kuliah-detail', this)"
-                        >
-                            <span>Universitas Contoh (2027–2031)</span>
-                            <svg
-                                class="chevron"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                style="transition: 0.3s"
-                            >
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </div>
-                        <div id="kuliah-detail" class="school-detail">
-                            <p>
-                                <strong>Jurusan:</strong> Teknik Informatika /
-                                Ilmu Komputer
-                            </p>
-                            <p>
-                                <strong>Fokus:</strong> Artificial Intelligence
-                                & Data Science.
                             </p>
                         </div>
                     </div>

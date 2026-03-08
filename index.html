@@ -6,11 +6,14 @@
         <title>Portofolio Azis Asmara</title>
 
         <!-- Font Import: Playfair Display untuk kesan mewah, Inter untuk keterbacaan -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+            rel="stylesheet"
+        />
 
-        <link rel="icon" type="image/webp" href="foto.webp">
+        <link rel="icon" type="image/webp" href="foto.webp" />
 
         <style>
             :root {
@@ -44,11 +47,13 @@
             }
 
             body {
-                font-family: 'Inter', sans-serif;
+                font-family: "Inter", sans-serif;
                 background: var(--bg);
                 color: var(--text);
                 line-height: 1.6;
-                transition: background 0.4s, color 0.4s;
+                transition:
+                    background 0.4s,
+                    color 0.4s;
                 overflow-x: hidden;
             }
 
@@ -68,7 +73,7 @@
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 transition: 0.3s;
             }
 
@@ -90,11 +95,11 @@
                 border: 4px solid var(--primary);
                 padding: 5px;
                 background: var(--card);
-                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             }
 
             h1 {
-                font-family: 'Playfair Display', serif;
+                font-family: "Playfair Display", serif;
                 font-size: 2.8rem;
                 margin: 1.5rem 0 0.5rem;
                 letter-spacing: -0.5px;
@@ -145,7 +150,8 @@
                 position: relative;
             }
 
-            nav a:hover, nav a.active {
+            nav a:hover,
+            nav a.active {
                 color: var(--primary);
             }
 
@@ -156,7 +162,7 @@
             }
 
             h2 {
-                font-family: 'Playfair Display', serif;
+                font-family: "Playfair Display", serif;
                 font-size: 2rem;
                 margin-bottom: 1.5rem;
                 position: relative;
@@ -179,13 +185,19 @@
                 border-radius: 20px;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
                 transition: 0.4s;
-                border: 1px solid rgba(0,0,0,0.03);
+                border: 1px solid rgba(0, 0, 0, 0.03);
             }
 
             body.dark .card {
-                border: 1px solid rgba(255,255,255,0.05);
+                border: 1px solid rgba(255, 255, 255, 0.05);
             }
 
+            .school-container {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
             .school-item {
                 background: rgba(79, 70, 229, 0.05);
                 padding: 1.2rem;
@@ -197,6 +209,9 @@
                 align-items: center;
                 transition: 0.3s;
             }
+            body.dark .school-item {
+                background: rgba(255, 255, 255, 0.05);
+            }
 
             .school-item:hover {
                 background: rgba(79, 70, 229, 0.1);
@@ -206,13 +221,14 @@
                 max-height: 0;
                 overflow: hidden;
                 transition: 0.4s ease-in-out;
-                color: var(--text-light);
                 font-size: 0.95rem;
+                border-left: 2px solid transparent;
             }
-
             .school-detail.active {
                 max-height: 300px;
-                padding: 1rem 0;
+                padding: 1rem;
+                border-left: 2px solid var(--primary);
+                margin-bottom: 0.5rem;
             }
 
             .grid {
@@ -222,7 +238,8 @@
                 margin-top: 1rem;
             }
 
-            .project-card, .cert-card {
+            .project-card,
+            .cert-card {
                 background: var(--bg);
                 padding: 1.5rem;
                 border-radius: 15px;
@@ -306,31 +323,107 @@
             }
 
             @media (max-width: 600px) {
-                h1 { font-size: 2rem; }
-                header img { width: 120px; height: 120px; }
-                nav { gap: 1rem; }
-                .card { padding: 1.5rem; }
+                h1 {
+                    font-size: 2rem;
+                }
+                header img {
+                    width: 120px;
+                    height: 120px;
+                }
+                nav {
+                    gap: 1rem;
+                }
+                .card {
+                    padding: 1.5rem;
+                }
             }
         </style>
     </head>
 
     <body>
         <!-- Theme Toggle Button (Moon/Sun) -->
-        <button class="theme-toggle" onclick="toggleDark()" id="theme-btn" title="Ganti Tema">
+        <button
+            class="theme-toggle"
+            onclick="toggleDark()"
+            id="theme-btn"
+            title="Ganti Tema"
+        >
             <!-- Moon Icon (Default) -->
-            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg
+                id="moon-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                ></path>
+            </svg>
             <!-- Sun Icon (Hidden by default) -->
-            <svg id="sun-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg
+                id="sun-icon"
+                style="display: none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
         </button>
 
         <header>
-            <img src="foto.webp" alt="Azis Asmara" onerror="this.src='https://ui-avatars.com/api/?name=Azis+Asmara&background=4f46e5&color=fff'" />
+            <img
+                src="foto.webp"
+                alt="Azis Asmara"
+                onerror="
+                    this.src =
+                        'https://ui-avatars.com/api/?name=Azis+Asmara&background=4f46e5&color=fff'
+                "
+            />
             <h1>M. Azis Asmara</h1>
             <h3><span id="typing"></span></h3>
-            
+
             <!-- Link Download CV yang diminta -->
-            <a href="CV-AzisAsmara.pdf" download="CV-AzisAsmara.pdf" class="download-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <a
+                href="CV-AzisAsmara.pdf"
+                download="CV-AzisAsmara.pdf"
+                class="download-btn"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
                 Download CV
             </a>
 
@@ -344,22 +437,89 @@
         <section id="profil" class="hidden">
             <div class="card">
                 <h2>Profil Singkat</h2>
-                <div style="margin-bottom: 2rem;">
-                    <p style="margin-bottom: 0.5rem;"><strong>Nama:</strong> M. Azis Asmara</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Panggilan:</strong> Aiz</p>
-                    <p style="margin-bottom: 0.5rem;"><strong>Lahir:</strong> Makassar, 7 April 2009</p>
+                <div style="margin-bottom: 2rem">
+                    <p style="margin-bottom: 0.5rem">
+                        <strong>Nama:</strong> M. Azis Asmara
+                    </p>
+                    <p style="margin-bottom: 0.5rem">
+                        <strong>Panggilan:</strong> Aiz
+                    </p>
+                    <p style="margin-bottom: 0.5rem">
+                        <strong>Lahir:</strong> Makassar, 7 April 2009
+                    </p>
                     <p><strong>Domisili:</strong> Makassar, Indonesia</p>
                 </div>
-
                 <h2>Pendidikan</h2>
-                <div class="school-item" onclick="toggleSchool()">
-                    <span>SMKN 7 Makassar (2024–2027)</span>
-                    <svg id="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:0.3s"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </div>
-                <div id="school-detail" class="school-detail">
-                    <div style="padding: 1rem; border-left: 2px solid var(--primary); margin-top: 0.5rem;">
-                        <p><strong>Jurusan:</strong> RPL (Rekayasa Perangkat Lunak)</p>
-                        <p><strong>Fokus:</strong> Web Development (Fullstack), Basis Data, IoT System, dan Robotics.</p>
+                <div class="school-container">
+                    <!-- Item Sekolah 1: SMK -->
+                    <div class="school-wrapper">
+                        <div
+                            class="school-item"
+                            onclick="toggleDropdown('smk-detail', this)"
+                        >
+                            <span>SMKN 7 Makassar (2024–2027)</span>
+                            <svg
+                                class="chevron"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                style="transition: 0.3s"
+                            >
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <div id="smk-detail" class="school-detail">
+                            <p>
+                                <strong>Jurusan:</strong> RPL (Rekayasa
+                                Perangkat Lunak)
+                            </p>
+                            <p>
+                                <strong>Fokus:</strong>Web Development
+                                (Fullstack), Basis Data, IoT System, dan
+                                Robotics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item Sekolah 2: Kuliah (Hasil Duplikat) -->
+                    <div class="school-wrapper">
+                        <div
+                            class="school-item"
+                            onclick="toggleDropdown('kuliah-detail', this)"
+                        >
+                            <span>Universitas Contoh (2027–2031)</span>
+                            <svg
+                                class="chevron"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                style="transition: 0.3s"
+                            >
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                        <div id="kuliah-detail" class="school-detail">
+                            <p>
+                                <strong>Jurusan:</strong> Teknik Informatika /
+                                Ilmu Komputer
+                            </p>
+                            <p>
+                                <strong>Fokus:</strong> Artificial Intelligence
+                                & Data Science.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -369,13 +529,43 @@
             <div class="card">
                 <h2>Project Showcase</h2>
                 <div class="grid">
-                    <div class="project-card" onclick="openModal('Website Freelance yang dibangun menggunakan PHP, MySQL, dan integrasi Payment Gateway untuk kemudahan transaksi.')">
-                        <h4 style="color: var(--primary);">Website Freelance</h4>
-                        <p style="font-size: 0.9rem; margin-top: 5px; color: var(--text-light);">PHP & Web Tech</p>
+                    <div
+                        class="project-card"
+                        onclick="
+                            openModal(
+                                'Website Freelance yang dibangun menggunakan PHP, MySQL, dan integrasi Payment Gateway untuk kemudahan transaksi.'
+                            )
+                        "
+                    >
+                        <h4 style="color: var(--primary)">Website Freelance</h4>
+                        <p
+                            style="
+                                font-size: 0.9rem;
+                                margin-top: 5px;
+                                color: var(--text-light);
+                            "
+                        >
+                            PHP & Web Tech
+                        </p>
                     </div>
-                    <div class="project-card" onclick="openModal('Sistem monitoring lingkungan berbasis IoT menggunakan mikrokontroler Arduino/ESP32 dengan dashboard real-time.')">
-                        <h4 style="color: var(--primary);">IoT Monitoring</h4>
-                        <p style="font-size: 0.9rem; margin-top: 5px; color: var(--text-light);">C++ & Robotics</p>
+                    <div
+                        class="project-card"
+                        onclick="
+                            openModal(
+                                'Sistem monitoring lingkungan berbasis IoT menggunakan mikrokontroler Arduino/ESP32 dengan dashboard real-time.'
+                            )
+                        "
+                    >
+                        <h4 style="color: var(--primary)">IoT Monitoring</h4>
+                        <p
+                            style="
+                                font-size: 0.9rem;
+                                margin-top: 5px;
+                                color: var(--text-light);
+                            "
+                        >
+                            C++ & Robotics
+                        </p>
                     </div>
                 </div>
             </div>
@@ -386,16 +576,37 @@
                 <h2>Sertifikat</h2>
                 <div class="grid">
                     <div class="cert-card">
-                        <p style="font-weight: 600;">Dasar AI</p>
-                        <img src="sertifikat_course_653_4977572_090226173605.pdf_20260226_005756465_7441652983621127721.png" alt="Sertifikat AI" onerror="this.src='https://placehold.co/400x250?text=Sertifikat+AI'" />
+                        <p style="font-weight: 600">Dasar AI</p>
+                        <img
+                            src="sertifikat_course_653_4977572_090226173605.pdf_20260226_005756465_7441652983621127721.png"
+                            alt="Sertifikat AI"
+                            onerror="
+                                this.src =
+                                    'https://placehold.co/400x250?text=Sertifikat+AI'
+                            "
+                        />
                     </div>
                     <div class="cert-card">
-                        <p style="font-weight: 600;">Financial Literacy</p>
-                        <img src="sertifikat_course_905_4977572_310126203624%20(2).pdf_20260226_005738924_8474969003688534611.png" alt="Sertifikat Finansial" onerror="this.src='https://placehold.co/400x250?text=Financial+Literacy'" />
+                        <p style="font-weight: 600">Financial Literacy</p>
+                        <img
+                            src="sertifikat_course_905_4977572_310126203624%20(2).pdf_20260226_005738924_8474969003688534611.png"
+                            alt="Sertifikat Finansial"
+                            onerror="
+                                this.src =
+                                    'https://placehold.co/400x250?text=Financial+Literacy'
+                            "
+                        />
                     </div>
                     <div class="cert-card">
-                        <p style="font-weight: 600;">KKRI 2025</p>
-                        <img src="sertifikat-KKRI.webp" alt="Sertifikat KKRI" onerror="this.src='https://placehold.co/400x250?text=Sertifikat+KKRI'" />
+                        <p style="font-weight: 600">KKRI 2025</p>
+                        <img
+                            src="sertifikat-KKRI.webp"
+                            alt="Sertifikat KKRI"
+                            onerror="
+                                this.src =
+                                    'https://placehold.co/400x250?text=Sertifikat+KKRI'
+                            "
+                        />
                     </div>
                 </div>
             </div>
@@ -403,9 +614,18 @@
 
         <div class="modal" id="modal">
             <div class="modal-content">
-                <h3 style="margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Detail Project</h3>
-                <p id="modal-text" style="color: var(--text-light);"></p>
-                <button onclick="closeModal()" class="close-modal">Tutup</button>
+                <h3
+                    style="
+                        margin-bottom: 1rem;
+                        font-family: &quot;Playfair Display&quot;, serif;
+                    "
+                >
+                    Detail Project
+                </h3>
+                <p id="modal-text" style="color: var(--text-light)"></p>
+                <button onclick="closeModal()" class="close-modal">
+                    Tutup
+                </button>
             </div>
         </div>
 
@@ -418,17 +638,26 @@
                 "IoT & Robotics Enthusiast",
                 "Aspiring ML Engineer"
             ];
-            let wordIndex = 0, charIndex = 0, currentWord = "", isDeleting = false;
+            let wordIndex = 0,
+                charIndex = 0,
+                currentWord = "",
+                isDeleting = false;
 
             function type() {
                 currentWord = words[wordIndex];
                 const typingEl = document.getElementById("typing");
-                
+
                 if (isDeleting) {
-                    typingEl.textContent = currentWord.substring(0, charIndex - 1);
+                    typingEl.textContent = currentWord.substring(
+                        0,
+                        charIndex - 1
+                    );
                     charIndex--;
                 } else {
-                    typingEl.textContent = currentWord.substring(0, charIndex + 1);
+                    typingEl.textContent = currentWord.substring(
+                        0,
+                        charIndex + 1
+                    );
                     charIndex++;
                 }
 
@@ -450,9 +679,9 @@
                 const body = document.body;
                 const moonIcon = document.getElementById("moon-icon");
                 const sunIcon = document.getElementById("sun-icon");
-                
+
                 body.classList.toggle("dark");
-                
+
                 if (body.classList.contains("dark")) {
                     moonIcon.style.display = "none";
                     sunIcon.style.display = "block";
@@ -464,7 +693,7 @@
 
             // Intersection Observer for Reveal Animation
             const revealOptions = { threshold: 0.15 };
-            const observer = new IntersectionObserver((entries) => {
+            const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("show");
@@ -472,14 +701,30 @@
                 });
             }, revealOptions);
 
-            document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+            document
+                .querySelectorAll(".hidden")
+                .forEach(el => observer.observe(el));
 
             // School Detail Toggle
-            function toggleSchool() {
-                const detail = document.getElementById("school-detail");
-                const chevron = document.getElementById("chevron");
-                detail.classList.toggle("active");
-                chevron.style.transform = detail.classList.contains("active") ? "rotate(180deg)" : "rotate(0deg)";
+            // MODIFIED: Universal Dropdown Function
+            // Fungsi ini sekarang menerima ID detail dan elemen tombolnya
+            function toggleDropdown(detailId, element) {
+                const detail = document.getElementById(detailId);
+                const chevron = element.querySelector(".chevron");
+
+                // Cek jika sudah aktif
+                const isActive = detail.classList.contains("active");
+
+                // Tutup semua dropdown lain jika ingin (opsional)
+                // document.querySelectorAll('.school-detail').forEach(d => d.classList.remove('active'));
+
+                if (isActive) {
+                    detail.classList.remove("active");
+                    chevron.style.transform = "rotate(0deg)";
+                } else {
+                    detail.classList.add("active");
+                    chevron.style.transform = "rotate(180deg)";
+                }
             }
 
             // Modal Logic
@@ -492,11 +737,10 @@
             }
 
             // Close modal on outside click
-            window.onclick = function(event) {
+            window.onclick = function (event) {
                 const modal = document.getElementById("modal");
                 if (event.target == modal) closeModal();
-            }
+            };
         </script>
     </body>
 </html>
-

@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://azisasmara.my.id</loc>
-    <lastmod>2026-03-09T03:15:36+08:00</lastmod>
-    <priority>1.0</priority>
-  </url>
+
+<url>
+<loc>https://azisasmara.my.id/</loc>
+<lastmod>2026-03-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://azisasmara.my.id/CV-AzisAsmara.pdf</loc>
+<lastmod>2026-03-09</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>https://azisasmara.my.id/robots.txt</loc>
+<lastmod>2026-03-09</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.2</priority>
+</url>
+
 </urlset>

@@ -3,27 +3,40 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Portofolio Azis</title>
+        <title>Portofolio Azis Asmara</title>
+
+        <!-- Font Import: Playfair Display untuk kesan mewah, Inter untuk keterbacaan -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
         <link rel="icon" type="image/webp" href="foto.webp">
 
         <style>
             :root {
-                --bg: #eef2ff;
+                --bg: #f8fafc;
                 --primary: #4f46e5;
-                --text: #1f1f1f;
+                --primary-hover: #4338ca;
+                --text: #1e293b;
+                --text-light: #64748b;
                 --card: #ffffff;
+                --nav-bg: rgba(255, 255, 255, 0.8);
             }
 
             body.dark {
                 --bg: #0f172a;
-                --text: #e2e8f0;
+                --text: #f1f5f9;
+                --text-light: #94a3b8;
                 --card: #1e293b;
                 --primary: #818cf8;
+                --primary-hover: #6366f1;
+                --nav-bg: rgba(15, 23, 42, 0.8);
             }
 
             * {
                 box-sizing: border-box;
+                margin: 0;
+                padding: 0;
             }
 
             html {
@@ -31,180 +44,232 @@
             }
 
             body {
-                margin: 0;
-                font-family:
-                    system-ui,
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    "Segoe UI",
-                    sans-serif;
-                background: linear-gradient(-45deg, #eef2ff, #e0e7ff, #c7d2fe);
-                background-size: 400% 400%;
-                animation: gradientMove 15s ease infinite;
+                font-family: 'Inter', sans-serif;
+                background: var(--bg);
                 color: var(--text);
                 line-height: 1.6;
+                transition: background 0.4s, color 0.4s;
+                overflow-x: hidden;
+            }
+
+            /* Dark Mode Toggle Position */
+            .theme-toggle {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                background: var(--card);
+                border: 1px solid var(--primary);
+                color: var(--primary);
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                 transition: 0.3s;
             }
 
-            body.dark {
-                background: #0f172a;
-                animation: none;
-            }
-
-            @keyframes gradientMove {
-                0% {
-                    background-position: 0% 50%;
-                }
-                50% {
-                    background-position: 100% 50%;
-                }
-                100% {
-                    background-position: 0% 50%;
-                }
+            .theme-toggle:hover {
+                transform: scale(1.1);
             }
 
             header {
                 text-align: center;
-                padding: 3rem 1.5rem 2rem;
+                padding: 5rem 1.5rem 2rem;
+                position: relative;
             }
 
             header img {
-                width: 160px;
-                height: 160px;
+                width: 150px;
+                height: 150px;
                 object-fit: cover;
                 border-radius: 50%;
-                border: 5px solid var(--primary);
+                border: 4px solid var(--primary);
+                padding: 5px;
+                background: var(--card);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             }
 
             h1 {
-                margin: 1rem 0 0.5rem;
+                font-family: 'Playfair Display', serif;
+                font-size: 2.8rem;
+                margin: 1.5rem 0 0.5rem;
+                letter-spacing: -0.5px;
+            }
+
+            #typing {
+                color: var(--primary);
+                font-weight: 600;
+                min-height: 1.6em;
+                display: inline-block;
+            }
+
+            /* Download CV Button */
+            .download-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 1.5rem;
+                padding: 0.8rem 1.8rem;
+                background: var(--primary);
+                color: white;
+                text-decoration: none;
+                border-radius: 30px;
+                font-weight: 600;
+                transition: 0.3s;
+                box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+            }
+
+            .download-btn:hover {
+                background: var(--primary-hover);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
             }
 
             nav {
-                margin-top: 1.2rem;
+                margin-top: 2.5rem;
                 display: flex;
                 justify-content: center;
-                gap: 1.2rem;
-                flex-wrap: wrap;
+                gap: 2rem;
             }
 
             nav a {
                 text-decoration: none;
-                color: var(--primary);
+                color: var(--text-light);
                 font-weight: 600;
+                font-size: 0.95rem;
+                transition: 0.3s;
                 position: relative;
             }
 
-            nav a::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: -4px;
-                width: 0;
-                height: 2px;
-                background: var(--primary);
-                transition: 0.3s;
-            }
-            nav a:hover::after {
-                width: 100%;
-            }
-
-            .toggle-btn {
-                margin-top: 1rem;
-                cursor: pointer;
-                padding: 0.4rem 0.8rem;
-                border-radius: 20px;
-                border: none;
-                background: var(--primary);
-                color: white;
-                font-weight: 600;
+            nav a:hover, nav a.active {
+                color: var(--primary);
             }
 
             section {
-                max-width: 1000px;
-                margin: 2.5rem auto;
-                padding: 0 1.2rem;
+                max-width: 900px;
+                margin: 4rem auto;
+                padding: 0 1.5rem;
+            }
+
+            h2 {
+                font-family: 'Playfair Display', serif;
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+                position: relative;
+                display: inline-block;
+            }
+
+            h2::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 40px;
+                height: 3px;
+                background: var(--primary);
             }
 
             .card {
                 background: var(--card);
-                padding: 1.8rem;
-                border-radius: 14px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                padding: 2.5rem;
+                border-radius: 20px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
                 transition: 0.4s;
+                border: 1px solid rgba(0,0,0,0.03);
             }
 
-            .card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            body.dark .card {
+                border: 1px solid rgba(255,255,255,0.05);
+            }
+
+            .school-item {
+                background: rgba(79, 70, 229, 0.05);
+                padding: 1.2rem;
+                border-radius: 12px;
+                cursor: pointer;
+                font-weight: 600;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: 0.3s;
+            }
+
+            .school-item:hover {
+                background: rgba(79, 70, 229, 0.1);
             }
 
             .school-detail {
                 max-height: 0;
                 overflow: hidden;
-                transition: 0.4s;
-                background: #f4f4ff;
-                border-radius: 10px;
-                padding: 0 1rem;
+                transition: 0.4s ease-in-out;
+                color: var(--text-light);
+                font-size: 0.95rem;
             }
 
             .school-detail.active {
-                max-height: 200px;
-                padding: 1rem;
+                max-height: 300px;
+                padding: 1rem 0;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 1.5rem;
+                margin-top: 1rem;
+            }
+
+            .project-card, .cert-card {
+                background: var(--bg);
+                padding: 1.5rem;
+                border-radius: 15px;
+                transition: 0.3s;
+                cursor: pointer;
+                border: 1px solid transparent;
+            }
+
+            .project-card:hover {
+                border-color: var(--primary);
+                transform: translateY(-5px);
+            }
+
+            .cert-card img {
+                width: 100%;
+                height: 160px;
+                object-fit: cover;
+                border-radius: 10px;
                 margin-top: 10px;
+                background: white;
             }
 
             .hidden {
                 opacity: 0;
-                transform: translateY(40px);
-                transition: all 0.8s ease;
+                transform: translateY(30px);
+                transition: 0.8s ease-out;
             }
+
             .show {
                 opacity: 1;
                 transform: translateY(0);
             }
 
-            .cert-grid,
-            .project-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                gap: 1rem;
-            }
-
-            .cert,
-            .project {
-                background: #f4f4ff;
-                border-radius: 12px;
-                padding: 1rem;
-                text-align: center;
-                font-weight: 600;
-                transform-style: preserve-3d;
-                transition: transform 0.2s ease;
-                cursor: pointer;
-            }
-
-            .Sertifikat {
-                width: 100%;
-                height: 140px;
-                object-fit: contain;
-                border-radius: 8px;
-                background: #fff;
-                padding: 0.4rem;
-            }
-
+            /* Modal Styling */
             .modal {
                 position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.6);
+                inset: 0;
+                background: rgba(0, 0, 0, 0.7);
+                backdrop-filter: blur(5px);
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                z-index: 2000;
                 opacity: 0;
                 pointer-events: none;
                 transition: 0.3s;
+                padding: 1.5rem;
             }
 
             .modal.active {
@@ -213,29 +278,61 @@
             }
 
             .modal-content {
-                background: white;
-                padding: 2rem;
-                border-radius: 10px;
-                max-width: 400px;
+                background: var(--card);
+                padding: 2.5rem;
+                border-radius: 20px;
+                max-width: 500px;
+                width: 100%;
                 text-align: center;
+                position: relative;
+            }
+
+            .close-modal {
+                margin-top: 1.5rem;
+                padding: 0.6rem 2rem;
+                border: none;
+                background: var(--primary);
+                color: white;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
             }
 
             footer {
                 text-align: center;
-                padding: 2rem 1rem;
-                opacity: 0.8;
+                padding: 4rem 1rem;
+                color: var(--text-light);
+                font-size: 0.9rem;
+            }
+
+            @media (max-width: 600px) {
+                h1 { font-size: 2rem; }
+                header img { width: 120px; height: 120px; }
+                nav { gap: 1rem; }
+                .card { padding: 1.5rem; }
             }
         </style>
     </head>
 
     <body>
+        <!-- Theme Toggle Button (Moon/Sun) -->
+        <button class="theme-toggle" onclick="toggleDark()" id="theme-btn" title="Ganti Tema">
+            <!-- Moon Icon (Default) -->
+            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <!-- Sun Icon (Hidden by default) -->
+            <svg id="sun-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+
         <header>
-            <img src="foto.webp" alt="Foto Profil" />
-            <h1>Hai, saya Azis!</h1>
+            <img src="foto.webp" alt="Azis Asmara" onerror="this.src='https://ui-avatars.com/api/?name=Azis+Asmara&background=4f46e5&color=fff'" />
+            <h1>M. Azis Asmara</h1>
             <h3><span id="typing"></span></h3>
-            <button class="toggle-btn" onclick="toggleDark()">
-                Toggle Dark Mode
-            </button>
+            
+            <!-- Link Download CV yang diminta -->
+            <a href="CV-AzisAsmara.pdf" download="CV-AzisAsmara.pdf" class="download-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Download CV
+            </a>
 
             <nav>
                 <a href="#profil">Profil</a>
@@ -247,26 +344,23 @@
         <section id="profil" class="hidden">
             <div class="card">
                 <h2>Profil Singkat</h2>
-                <p>
-                    <b>Nama:</b> M. Azis Asmara <br /><b>Panggilan:</b>
-                    Aiz <br /><b>Lahir: </b>Makassar, 7 April 2009 <br /><b
-                        >Domisili</b
-                    >
-                    Makassar
-                </p>
-                <h2>Riwayat Pendidikan</h2>
-
-                <div class="project" onclick="toggleSchool()">
-                    SMKN 7 Makassar (2024–2027)
+                <div style="margin-bottom: 2rem;">
+                    <p style="margin-bottom: 0.5rem;"><strong>Nama:</strong> M. Azis Asmara</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Panggilan:</strong> Aiz</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Lahir:</strong> Makassar, 7 April 2009</p>
+                    <p><strong>Domisili:</strong> Makassar, Indonesia</p>
                 </div>
 
+                <h2>Pendidikan</h2>
+                <div class="school-item" onclick="toggleSchool()">
+                    <span>SMKN 7 Makassar (2024–2027)</span>
+                    <svg id="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:0.3s"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
                 <div id="school-detail" class="school-detail">
-                    <p>
-                        <b>Jurusan:</b> RPL (Rekayasa Perangkat Lunak)
-                        <br />
-                        <b>Fokus belajar:</b> Web Development, Basis Data,
-                        Pengembangan Gim, dan IoT.
-                    </p>
+                    <div style="padding: 1rem; border-left: 2px solid var(--primary); margin-top: 0.5rem;">
+                        <p><strong>Jurusan:</strong> RPL (Rekayasa Perangkat Lunak)</p>
+                        <p><strong>Fokus:</strong> Web Development (Fullstack), Basis Data, IoT System, dan Robotics.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -274,28 +368,14 @@
         <section id="projects" class="hidden">
             <div class="card">
                 <h2>Project Showcase</h2>
-                <div class="project-grid">
-                    <div
-                        class="project"
-                        onclick="
-                            openModal(
-                                `Website Freelance dengan bahasa pemrograman
-                                PHP, yang di kombinasikan dengan teknologi HTML,
-                                CSS, dan Javascript.`
-                            )
-                        "
-                    >
-                        Website Freelance
+                <div class="grid">
+                    <div class="project-card" onclick="openModal('Website Freelance yang dibangun menggunakan PHP, MySQL, dan integrasi Payment Gateway untuk kemudahan transaksi.')">
+                        <h4 style="color: var(--primary);">Website Freelance</h4>
+                        <p style="font-size: 0.9rem; margin-top: 5px; color: var(--text-light);">PHP & Web Tech</p>
                     </div>
-                    <div
-                        class="project"
-                        onclick="
-                            openModal(
-                                'Sistem IoT Monitoring berbasis Arduino dan C++.'
-                            )
-                        "
-                    >
-                        IoT Monitoring
+                    <div class="project-card" onclick="openModal('Sistem monitoring lingkungan berbasis IoT menggunakan mikrokontroler Arduino/ESP32 dengan dashboard real-time.')">
+                        <h4 style="color: var(--primary);">IoT Monitoring</h4>
+                        <p style="font-size: 0.9rem; margin-top: 5px; color: var(--text-light);">C++ & Robotics</p>
                     </div>
                 </div>
             </div>
@@ -304,24 +384,18 @@
         <section id="sertifikat" class="hidden">
             <div class="card">
                 <h2>Sertifikat</h2>
-                <div class="cert-grid">
-                    <div class="cert">
-                        <p>Sertifikat Dasar AI</p>
-                        <img
-                            class="Sertifikat"
-                            src="sertifikat_course_653_4977572_090226173605.pdf_20260226_005756465_7441652983621127721.png"
-                        />
+                <div class="grid">
+                    <div class="cert-card">
+                        <p style="font-weight: 600;">Dasar AI</p>
+                        <img src="sertifikat_course_653_4977572_090226173605.pdf_20260226_005756465_7441652983621127721.png" alt="Sertifikat AI" onerror="this.src='https://placehold.co/400x250?text=Sertifikat+AI'" />
                     </div>
-                    <div class="cert">
-                        <p>Sertifikat Financial Literacy</p>
-                        <img
-                            class="Sertifikat"
-                            src="sertifikat_course_905_4977572_310126203624%20(2).pdf_20260226_005738924_8474969003688534611.png"
-                        />
+                    <div class="cert-card">
+                        <p style="font-weight: 600;">Financial Literacy</p>
+                        <img src="sertifikat_course_905_4977572_310126203624%20(2).pdf_20260226_005738924_8474969003688534611.png" alt="Sertifikat Finansial" onerror="this.src='https://placehold.co/400x250?text=Financial+Literacy'" />
                     </div>
-                    <div class="cert">
-                        <p>Sertifikat KKRI 2025</p>
-                        <img class="Sertifikat" src="sertifikat-KKRI.webp" />
+                    <div class="cert-card">
+                        <p style="font-weight: 600;">KKRI 2025</p>
+                        <img src="sertifikat-KKRI.webp" alt="Sertifikat KKRI" onerror="this.src='https://placehold.co/400x250?text=Sertifikat+KKRI'" />
                     </div>
                 </div>
             </div>
@@ -329,68 +403,86 @@
 
         <div class="modal" id="modal">
             <div class="modal-content">
-                <p id="modal-text"></p>
-                <button onclick="closeModal()" class="toggle-btn">Tutup</button>
+                <h3 style="margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Detail Project</h3>
+                <p id="modal-text" style="color: var(--text-light);"></p>
+                <button onclick="closeModal()" class="close-modal">Tutup</button>
             </div>
         </div>
 
-        <footer>M. Azis Asmara © 2026</footer>
+        <footer>M. Azis Asmara &bull; 2026</footer>
 
         <script>
-            // typing effect
+            // Typing effect logic
             const words = [
                 "Backend Developer",
                 "IoT & Robotics Enthusiast",
                 "Aspiring ML Engineer"
             ];
-            let i = 0,
-                j = 0,
-                current = "",
-                isDeleting = false;
+            let wordIndex = 0, charIndex = 0, currentWord = "", isDeleting = false;
+
             function type() {
-                current = words[i];
-                document.getElementById("typing").textContent =
-                    current.substring(0, j);
-                if (!isDeleting && j < current.length) {
-                    j++;
-                } else if (isDeleting && j > 0) {
-                    j--;
-                } else if (!isDeleting && j === current.length) {
-                    isDeleting = true;
-                    setTimeout(type, 1000);
-                    return;
+                currentWord = words[wordIndex];
+                const typingEl = document.getElementById("typing");
+                
+                if (isDeleting) {
+                    typingEl.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
                 } else {
-                    isDeleting = false;
-                    i = (i + 1) % words.length;
+                    typingEl.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
                 }
-                setTimeout(type, isDeleting ? 50 : 100);
-            }
-            type();
 
-            // dark mode
+                if (!isDeleting && charIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1500); // Pause at end
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, isDeleting ? 50 : 100);
+                }
+            }
+            window.onload = type;
+
+            // Dark Mode Toggle dengan Ikon Matahari/Bulan
             function toggleDark() {
-                document.body.classList.toggle("dark");
+                const body = document.body;
+                const moonIcon = document.getElementById("moon-icon");
+                const sunIcon = document.getElementById("sun-icon");
+                
+                body.classList.toggle("dark");
+                
+                if (body.classList.contains("dark")) {
+                    moonIcon.style.display = "none";
+                    sunIcon.style.display = "block";
+                } else {
+                    moonIcon.style.display = "block";
+                    sunIcon.style.display = "none";
+                }
             }
 
-            // reveal animation
-            const observer = new IntersectionObserver(entries => {
+            // Intersection Observer for Reveal Animation
+            const revealOptions = { threshold: 0.15 };
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("show");
                     }
                 });
-            });
-            document
-                .querySelectorAll(".hidden")
-                .forEach(el => observer.observe(el));
+            }, revealOptions);
 
-            // Toggle school
+            document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+            // School Detail Toggle
             function toggleSchool() {
-                const el = document.getElementById("school-detail");
-                el.classList.toggle("active");
+                const detail = document.getElementById("school-detail");
+                const chevron = document.getElementById("chevron");
+                detail.classList.toggle("active");
+                chevron.style.transform = detail.classList.contains("active") ? "rotate(180deg)" : "rotate(0deg)";
             }
 
-            // modal
+            // Modal Logic
             function openModal(text) {
                 document.getElementById("modal-text").innerText = text;
                 document.getElementById("modal").classList.add("active");
@@ -399,22 +491,12 @@
                 document.getElementById("modal").classList.remove("active");
             }
 
-            // 3D tilt
-            document.querySelectorAll(".cert").forEach(card => {
-                card.addEventListener("mousemove", e => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = ((y - centerY) / centerY) * 10;
-                    const rotateY = ((x - centerX) / centerX) * 10;
-                    card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
-                });
-                card.addEventListener("mouseleave", () => {
-                    card.style.transform = "rotateX(0) rotateY(0)";
-                });
-            });
+            // Close modal on outside click
+            window.onclick = function(event) {
+                const modal = document.getElementById("modal");
+                if (event.target == modal) closeModal();
+            }
         </script>
     </body>
 </html>
+

@@ -3,18 +3,32 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Portfolio M. Azis Asmara,
+        <meta
+            name="description"
+            content="Portfolio M. Azis Asmara,
         Backend Developer dari SMKN 7 Makassar yang fokus pada Web Development,
-        IoT, dan Arduino.">
-        <meta property="og:title" content="M. Azis Asmara - Backend Developer">
-<meta property="og:description" content="Portfolio Backend Developer dari SMKN 7
-Makassar yang fokus pada Web Development, IoT, dan Business">
-<meta property="og:url" content="https://azisasmara.my.id">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://azisasmara.my.id/foto.webp">
-        <title>M. Azis Asmara - Backend Developer Portfolio | azisasmara.my.id</title>
+        IoT, dan Arduino."
+        />
+        <meta
+            property="og:title"
+            content="M. Azis Asmara - Backend Developer"
+        />
+        <meta
+            property="og:description"
+            content="Portfolio Backend Developer dari SMKN 7
+Makassar yang fokus pada Web Development, IoT, dan Business"
+        />
+        <meta property="og:url" content="https://azisasmara.my.id" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:image"
+            content="https://azisasmara.my.id/foto.webp"
+        />
+        <title>
+            M. Azis Asmara - Backend Developer Portfolio | azisasmara.my.id
+        </title>
 
-        <link rel="canonical" href="https://azisasmara.my.id/">
+        <link rel="canonical" href="https://azisasmara.my.id/" />
         <!-- Font Import: Playfair Display untuk kesan mewah, Inter untuk keterbacaan -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,8 +37,8 @@ Makassar yang fokus pada Web Development, IoT, dan Business">
             rel="stylesheet"
         />
 
-        <link rel="icon" href="/favicon.ico">
-        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
         <style>
             :root {
@@ -349,32 +363,62 @@ Makassar yang fokus pada Web Development, IoT, dan Business">
                 }
             }
             
-            
- 
+            /* Style skill */
+            .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
 
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: var(--bg-card); /* Sesuaikan dengan variabel warna webmu */
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item img {
+    width: 50px; /* Atur ukuran logo */
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.skill-item span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
 
         </style>
-        
+
         <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Person",
- "name": "M. Azis Asmara",
- "url": "https://azisasmara.my.id",
- "jobTitle": "Backend Developer",
- "address": {
-   "@type": "PostalAddress",
-   "addressLocality": "Makassar",
-   "addressCountry": "Indonesia"
- }
-}
-</script>
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "M. Azis Asmara",
+                "url": "https://azisasmara.my.id",
+                "jobTitle": "Backend Developer",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Makassar",
+                    "addressCountry": "Indonesia"
+                }
+            }
+        </script>
     </head>
 
     <body>
-       
-
-       
         <!-- Theme Toggle Button (Moon/Sun) -->
         <button
             class="theme-toggle"
@@ -464,6 +508,7 @@ Makassar yang fokus pada Web Development, IoT, dan Business">
             <nav>
                 <a href="#profil">Profil</a>
                 <a href="#projects">Project</a>
+                <a href="#skills">Skills</a>
                 <a href="#sertifikat">Sertifikat</a>
             </nav>
         </header>
@@ -601,6 +646,46 @@ Makassar yang fokus pada Web Development, IoT, dan Business">
             </div>
         </section>
 
+        <section id="skills" class="hidden">
+            <div class="card">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <img src="python.jpg" alt="Python" />
+                        <span>Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="c++.jpg" alt="C++" />
+                        <span>C++</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="lua.jpg" alt="Lua" />
+                        <span>Lua</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="linux.jpg" alt="Linux" />
+                        <span>Linux</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="js.jpg" alt="Javascript" />
+                        <span>Javascript</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="mysql.jpg" alt="Mysql" />
+                        <span>Mysql</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="php.jpg" alt="PHP" />
+                        <span>PHP</span>
+                    </div>
+                    <div class="skill-item">
+                        <img src="html.jpg" alt="HTML" />
+                        <span>HTML</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="sertifikat" class="hidden">
             <div class="card">
                 <h2>Sertifikat</h2>
@@ -662,9 +747,6 @@ Makassar yang fokus pada Web Development, IoT, dan Business">
         <footer>M. Azis Asmara &bull; 2026</footer>
 
         <script>
-        
-           
-        
             // Typing effect logic
             const words = [
                 "Backend Developer",

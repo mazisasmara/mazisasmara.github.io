@@ -375,11 +375,6 @@ footer {
   font-size: 0.98rem;
 }
 
-/* Aksen kiri (branding) */
-#tentang-azis .card {
-  border-left: 4px solid var(--primary);
-}
-
 /* Hover effect */
 #tentang-azis .card:hover {
   transform: translateY(-3px);

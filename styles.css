@@ -361,40 +361,40 @@ footer {
 
 /* ===== Tentang Azis Section ===== */
 #tentang-azis {
-position: relative;
+  position: relative;
 }
 
 /* Highlight keyword */
 #tentang-azis strong {
-font-weight: 700;
+  font-weight: 700;
 }
 
 /* Paragraf spacing */
 #tentang-azis p {
-margin-bottom: 1rem;
-font-size: 0.98rem;
+  margin-bottom: 1rem;
+  font-size: 0.98rem;
 }
 
 /* Aksen kiri (branding) */
 #tentang-azis .card {
-border-left: 4px solid var(--primary);
+  border-left: 4px solid var(--primary);
 }
 
 /* Hover effect */
 #tentang-azis .card:hover {
-transform: translateY(-3px);
-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* Link styling */
 .azis-link {
-color: var(--primary);
-font-weight: 600;
-text-decoration: none;
-border-bottom: 1px solid transparent;
-transition: 0.3s;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
 }
 
 .azis-link:hover {
-border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
 }

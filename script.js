@@ -5,9 +5,9 @@ const words = [
   "Aspiring ML Engineer"
 ];
 let wordIndex = 0,
-charIndex = 0,
-currentWord = "",
-isDeleting = false;
+charIndex = words[0].length,
+currentWord = words[0],
+isDeleting = true;
 
 function type() {
   currentWord = words[wordIndex];

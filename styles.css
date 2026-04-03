@@ -393,3 +393,7 @@ footer {
 .azis-link:hover {
   border-bottom: 1px solid var(--primary);
 }
+
+.fontBold {
+  font-weight: bold;
+}

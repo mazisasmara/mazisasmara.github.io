@@ -78,49 +78,86 @@
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "M. Azis Asmara",
-                "alternateName": ["M. Azis", "Azis", "Azis Asmara"],
-                "url": "https://azisasmara.my.id",
-                "image": "https://azisasmara.my.id/foto.webp",
-                "jobTitle": "Backend Developer",
-                "description": "M. Azis Asmara (Azis) merupakan Backend Developer muda dari Makassar dan siswa RPL SMKN 7 Makassar. Aktif mengembangkan project backend, website, dan eksplorasi teknologi robotics.",
-
-                "sameAs": [
-                    "https://github.com/mazisasmara",
-                    "https://www.instagram.com/m.azis_asmara"
-                ],
-
-                "knowsAbout": [
-                    "PHP",
-                    "Python",
-                    "JavaScript",
-                    "MySQL",
-                    "C++",
-                    "IoT",
-                    "Robotics",
-                    "Linux",
-                    "Lua"
-                ],
-
-                "alumniOf": [
+                "@graph": [
                     {
-                        "@type": "EducationalOrganization",
-                        "name": "SMP Negeri 2 Makassar"
+                        "@type": "Person",
+                        "@id": "https://azisasmara.my.id/#person",
+                        "name": "M. Azis Asmara",
+                        "alternateName": ["M. Azis", "Azis", "Azis Asmara"],
+                        "url": "https://azisasmara.my.id",
+                        "image": "https://azisasmara.my.id/foto.webp",
+                        "jobTitle": "Backend Developer",
+                        "description": "M. Azis Asmara (Azis) merupakan Backend Developer muda dari Makassar dan siswa RPL SMKN 7 Makassar. Aktif mengembangkan project backend, website, dan eksplorasi teknologi robotics.",
+                        "sameAs": [
+                            "https://github.com/mazisasmara",
+                            "https://www.instagram.com/m.azis_asmara"
+                        ],
+                        "knowsAbout": [
+                            "PHP",
+                            "Python",
+                            "JavaScript",
+                            "MySQL",
+                            "C++",
+                            "IoT",
+                            "Robotics",
+                            "Linux",
+                            "Lua"
+                        ],
+                        "alumniOf": [
+                            {
+                                "@type": "EducationalOrganization",
+                                "name": "SMP Negeri 2 Makassar"
+                            },
+                            {
+                                "@type": "EducationalOrganization",
+                                "name": "SMKN 7 Makassar",
+                                "sameAs": "https://referensi.data.kemendikdasmen.go.id"
+                            }
+                        ],
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Makassar",
+                            "addressRegion": "Sulawesi Selatan",
+                            "addressCountry": "ID"
+                        }
                     },
                     {
-                        "@type": "EducationalOrganization",
-                        "name": "SMKN 7 Makassar",
-                        "sameAs": "https://referensi.data.kemendikdasmen.go.id"
+                        "@type": "ItemList",
+                        "name": "Navigasi Utama",
+                        "itemListElement": [
+                            {
+                                "@type": "SiteNavigationElement",
+                                "position": 1,
+                                "name": "Tentang Azis",
+                                "url": "https://azisasmara.my.id/#tentang-azis"
+                            },
+                            {
+                                "@type": "SiteNavigationElement",
+                                "position": 2,
+                                "name": "profil",
+                                "url": "https://azisasmara.my.id/#profil"
+                            },
+                            {
+                                "@type": "SiteNavigationElement",
+                                "position": 3,
+                                "name": "projects",
+                                "url": "https://azisasmara.my.id/#projects"
+                            },
+                            {
+                                "@type": "SiteNavigationElement",
+                                "position": 4,
+                                "name": "Skills",
+                                "url": "https://azisasmara.my.id/#skills"
+                            },
+                            {
+                                "@type": "SiteNavigationElement",
+                                "position": 5,
+                                "name": "Sertifikat",
+                                "url": "https://azisasmara.my.id/#sertifikat"
+                            }
+                        ]
                     }
-                ],
-
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Makassar",
-                    "addressRegion": "Sulawesi Selatan",
-                    "addressCountry": "ID"
-                }
+                ]
             }
         </script>
     </head>
@@ -188,7 +225,10 @@
                 "
             />
             <h1>Halo, Saya M. Azis Asmara</h1>
-            <p class="visually-hidden">Selamat datang di halaman portofolio M. Azis Asmara, seorang Backend Developer dari Makassar.</p>
+            <p class="visually-hidden">
+                Selamat datang di halaman portofolio M. Azis Asmara, seorang
+                Backend Developer dari Makassar.
+            </p>
             <p
                 style="
                     position: absolute;
@@ -251,11 +291,13 @@
                 <p>
                     Fokus utama saya saat ini adalah mengembangkan arsitektur
                     backend yang efisien menggunakan bahasa pemrograman
-                    <span class="fontBold">PHP</span> dan <span class="fontBold">Python</span>. Selain
-                    itu, saya aktif melakukan eksperimen dalam ekosistem
-                    <span class="fontBold">Linux</span> dan otomatisasi menggunakan
-                    <span class="fontBold">MySQL</span> sebagai basis data utama untuk
-                    penyimpanan informasi yang terstruktur.
+                    <span class="fontBold">PHP</span> dan
+                    <span class="fontBold">Python</span>. Selain itu, saya aktif
+                    melakukan eksperimen dalam ekosistem
+                    <span class="fontBold">Linux</span> dan otomatisasi
+                    menggunakan <span class="fontBold">MySQL</span> sebagai
+                    basis data utama untuk penyimpanan informasi yang
+                    terstruktur.
                 </p>
 
                 <p>
@@ -382,10 +424,10 @@
                             </svg>
                         </div>
                         <div id="dicoding-detail" class="school-detail">
-                            
                             <p>
                                 <span class="fontBold">Fokus:</span> Web
-                                Development (Fullstack), Artificial Inteligence, dan Cloud System.
+                                Development (Fullstack), Artificial Inteligence,
+                                dan Cloud System.
                             </p>
                         </div>
                     </div>
@@ -516,7 +558,7 @@
                     <div class="cert-card">
                         <p style="font-weight: 600">Dasar AI</p>
                         <img
-                            src="sertifikat_course_653_4977572_090226173605.pdf_20260226_005756465_7441652983621127721.png"
+                            src="sertifikat-dicoding-AI.png"
                             alt="Sertifikat Dasar AI – M. Azis Asmara"
                             onerror="
                                 this.src =
@@ -527,11 +569,23 @@
                     <div class="cert-card">
                         <p style="font-weight: 600">Financial Literacy</p>
                         <img
-                            src="sertifikat_course_905_4977572_310126203624%20(2).pdf_20260226_005738924_8474969003688534611.png"
+                            src="sertifikat-dicoding-finansialLiterasi.png"
                             alt="Sertifikat Financial Literacy – M. Azis Asmara"
                             onerror="
                                 this.src =
                                     'https://placehold.co/400x250?text=Financial+Literacy'
+                            "
+                        />
+                    </div>
+                    </div>
+                    <div class="cert-card">
+                        <p style="font-weight: 600">Dasar Python</p>
+                        <img
+                            src="sertifikat-dicoding-python.png"
+                            alt="Sertifikat Dasar Python – M. Azis Asmara"
+                            onerror="
+                                this.src =
+                                    'https://placehold.co/400x250?text=Dasar+Python'
                             "
                         />
                     </div>

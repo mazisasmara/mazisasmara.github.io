@@ -114,3 +114,64 @@ window.onclick = function (event) {
   const modal = document.getElementById("modal");
   if (event.target == modal) closeModal();
 };
+// ===== CERTIFICATE GALLERY FILTER & MODAL =====
+
+document.addEventListener('DOMContentLoaded', function() {
+    const certDropdown = document.getElementById('cert-category');
+    const certGallery = document.getElementById('cert-gallery');
+    const galleryItems = document.querySelectorAll('.cert-gallery-item');
+
+    // Filter functionality
+    certDropdown.addEventListener('change', function(e) {
+        const selectedCategory = e.target.value;
+        
+        galleryItems.forEach(item => {
+            if (selectedCategory === 'all' || item.dataset.category === selectedCategory) {
+                item.classList.remove('hidden-item');
+            } else {
+                item.classList.add('hidden-item');
+            }
+        });
+    });
+
+    // Modal functionality - Klik gambar untuk fullscreen
+    galleryItems.forEach(item => {
+        const img = item.querySelector('.cert-gallery-img');
+        const label = item.querySelector('.cert-label');
+
+        item.addEventListener('click', function() {
+            const modal = document.getElementById('cert-modal');
+            const modalImg = document.getElementById('cert-modal-img');
+            const modalLabel = document.getElementById('cert-modal-label');
+
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modalLabel.textContent = label.textContent;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+});
+
+// Close modal
+function closeCertModal() {
+    const modal = document.getElementById('cert-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal saat klik di luar gambar
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('cert-modal');
+    if (e.target === modal) {
+        closeCertModal();
+    }
+});
+
+// Close modal dengan tombol ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeCertModal();
+    }
+});

@@ -485,30 +485,23 @@ footer {
 
 /* Gallery Container */
 .cert-gallery-wrapper {
-    overflow: hidden;
     position: relative;
     border-radius: 15px;
     margin-top: 2rem;
 }
 
 .cert-gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    animation: slideLeft 25s linear infinite;
     padding: 0.5rem;
-    width: fit-content;
-}
-
-.cert-gallery:hover {
-    animation-play-state: paused;
 }
 
 .cert-gallery-item {
-    min-width: 240px;
-    flex-shrink: 0;
     cursor: pointer;
     transition: 0.3s;
     opacity: 1;
+    width: 100%;
 }
 
 .cert-gallery-item.hidden-item {
@@ -520,21 +513,21 @@ footer {
     border-radius: 12px;
     overflow: hidden;
     background: var(--bg);
-    aspect-ratio: auto;
-    height: 180px;
+    aspect-ratio: 16 / 10;
+    height: auto;
 }
 
 .cert-gallery-img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     transition: 0.3s;
     background: white;
     padding: 8px;
 }
 
 .cert-gallery-item:hover .cert-gallery-img {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
 .cert-label {
@@ -545,13 +538,16 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Animasi carousel (kanan ke kiri) - DIPERCEPAT */
-@keyframes slideLeft {
-    0% {
-        transform: translateX(0);
+/* Responsivitas Galeri */
+@media (min-width: 640px) {
+    .cert-gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
-    100% {
-        transform: translateX(-50%);
+}
+
+@media (min-width: 1024px) {
+    .cert-gallery {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 

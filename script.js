@@ -1,8 +1,7 @@
 // Typing effect logic
 const words = [
   "Backend Developer",
-  "IoT & Robotics Enthusiast",
-  "Aspiring ML Engineer"
+  "IoT & Robotics Enthusiast"
 ];
 let wordIndex = 0,
 charIndex = words[0].length,

@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://azisasmara.my.id/sitemap.xml
+Sitemap: https://mazisasmara.web.id/sitemap.xml

@@ -39,6 +39,23 @@ function type() {
 }
 window.onload = type;
 
+// Redirect visitors to the permanent website after showing the notice.
+const newWebsiteUrl = "https://mazisasmara.web.id/";
+const countdownElement = document.getElementById("redirect-countdown");
+
+if (countdownElement) {
+  let secondsRemaining = 8;
+  const countdownTimer = window.setInterval(() => {
+    secondsRemaining -= 1;
+    countdownElement.textContent = secondsRemaining;
+
+    if (secondsRemaining <= 0) {
+      window.clearInterval(countdownTimer);
+      window.location.replace(newWebsiteUrl);
+    }
+  }, 1000);
+}
+
 // Dark Mode Toggle dengan Ikon Matahari/Bulan
 function toggleDark() {
   const body = document.body;

@@ -39,6 +39,82 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== Permanent Website Migration Alert ===== */
+.migration-alert {
+  width: min(900px, calc(100% - 3rem));
+  margin: 1.5rem auto 0;
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  border-left: 5px solid var(--primary);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.12);
+}
+
+.migration-alert__icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.migration-alert__content {
+  flex: 1;
+}
+
+.migration-alert__content strong {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+}
+
+.migration-alert__content p {
+  color: var(--text-light);
+  font-size: 0.92rem;
+}
+
+.migration-alert__content a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.migration-alert__button {
+  flex: 0 0 auto;
+  padding: 0.7rem 1rem;
+  color: #ffffff;
+  background: var(--primary);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.migration-alert__button:hover,
+.migration-alert__button:focus-visible {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.migration-noscript {
+  width: min(900px, calc(100% - 3rem));
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+  color: var(--text);
+  background: var(--card);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+}
+
 /* Dark Mode Toggle Position */
 .theme-toggle {
   position: fixed;
@@ -305,6 +381,21 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .migration-alert {
+    width: calc(100% - 2rem);
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .migration-alert__content {
+    flex: 1 1 calc(100% - 62px);
+  }
+
+  .migration-alert__button {
+    width: 100%;
+    text-align: center;
+  }
+
   h1 {
     font-size: 2rem;
   }
